@@ -37,7 +37,8 @@ log_pooler_errors = ${PGBOUNCER_LOG_POOLER_ERRORS:-1}
 stats_period = ${PGBOUNCER_STATS_PERIOD:-120}
 pkt_buf = ${PGBOUNCER_PKT_BUF:-4096}
 sbuf_loopcnt = ${PGBOUNCER_SBUF_LOOPCNT:-20}
-server_tls_sslmode = ${PGBOUNCER_SERVER_TLS_SSLMODE:-prefer}
+server_tls_sslmode = ${PGBOUNCER_SSL_MODE:-verify-full}
+server_tls_ca_file = ${PGBOUNCER_SSL_ROOT_CERT:-/app/config/rds-ca-cert.pem}
 ignore_startup_parameters = extra_float_digits
 [databases]
 EOFEOF
