@@ -40,6 +40,7 @@ function package_download() {
 # vendor directories
 VENDORED_PGBOUNCER="vendor/pgbouncer"
 
+echo "Using Brightwheel PGBouncer Buildpack"
 # vendor pgbouncer into the slug
 PATH="$BUILD_DIR/$VENDORED_PGBOUNCER/bin:$PATH"
 echo "-----> Fetching and vendoring pgbouncer into slug"
