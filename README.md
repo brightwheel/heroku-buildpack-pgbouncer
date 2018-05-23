@@ -1,4 +1,10 @@
-# Heroku buildpack: pgbouncer
+# Brightwheel buildpack: pgbouncer
+
+This is a fork of the heroku buildpack - pgbouncer [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) that allows us to run pgbouncer and NOT stunnel in a dyno alongside our app.
+
+We forked the heroku buildpack because we want to use *verify-full* ssl mode on a new RDS instance. The heroku-buildpack uses stunnel (https://linux.die.net/man/8/stunnel) to enforce SSL, but as of pgbouncer 1.7.2, stunnel is not required to establish SSL connections to RDS.
+
+# Heroku Buildpack - Pgbouncer
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) that
 allows one to run pgbouncer and stunnel in a dyno alongside application code.

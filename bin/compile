@@ -33,13 +33,14 @@ function package_download() {
   location="$1"
 
   mkdir -p $location
-  package="https://github.com/BetterWorks/heroku-buildpack-pgbouncer/raw/master/support/pgbouncer-1.7.2.tgz"
+  package="https://github.com/brightwheel/heroku-buildpack-pgbouncer/raw/master/support/pgbouncer-1.7.2.tgz"
   curl $package -L -s -o - | tar xzf - -C $location
 }
 
 # vendor directories
 VENDORED_PGBOUNCER="vendor/pgbouncer"
 
+echo "Using Brightwheel PGBouncer Buildpack"
 # vendor pgbouncer into the slug
 PATH="$BUILD_DIR/$VENDORED_PGBOUNCER/bin:$PATH"
 echo "-----> Fetching and vendoring pgbouncer into slug"
